@@ -1,0 +1,12 @@
+steps:
+# This step deploys the new version of our container image
+# in the hello-cloudbuild Kubernetes Engine cluster.
+- name: 'gcr.io/cloud-builders/kubectl'
+  id: Deploy
+  args:
+  - 'apply'
+  - '-f'
+  - 'kubernetes.yaml'
+  env:
+  - 'CLOUDSDK_COMPUTE_REGION=$_CLOUDSDK_COMPUTE_REGION'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=$_CLUSTER_NAME'
