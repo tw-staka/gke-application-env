@@ -1,4 +1,14 @@
 steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: GetCreds
+  args:
+  - 'container'
+  - 'clusters'
+  - 'get-credentials'
+  - '--project=${PROJECT_ID}'
+  - '--region=australia-southeast1'
+  - '${_CLUSTER_NAME}'
+  
 # This step deploys the new version of our container image
 # in the hello-cloudbuild Kubernetes Engine cluster.
 - name: 'gcr.io/cloud-builders/kubectl'
@@ -7,6 +17,4 @@ steps:
   - 'apply'
   - '-f'
   - 'kubernetes.yaml'
-  env:
-  - 'CLOUDSDK_COMPUTE_ZONE=$_CLOUDSDK_COMPUTE_ZONE'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=$_CLUSTER_NAME'
+  
