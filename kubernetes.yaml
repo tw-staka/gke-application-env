@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tw-in-a-box-demo
-        image: asia.gcr.io/application-stg-44fe6b/hello-world:6c20110
+        image: asia.gcr.io/application-stg-44fe6b/hello-world:98fe395
         ports:
         - containerPort: 8080
 ---
