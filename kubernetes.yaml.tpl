@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tw-in-a-box-demo
-        image: gcr.io/GOOGLE_CLOUD_PROJECT/hello-world:COMMIT_SHA
+        image: asia.gcr.io/GOOGLE_CLOUD_PROJECT/hello-world:COMMIT_SHA
         ports:
         - containerPort: 8080
 ---
